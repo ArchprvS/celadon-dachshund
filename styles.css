@@ -1,7 +1,15 @@
 body {
-    background-color: rgb(223, 252, 229);
+    background-color: #D6FFF1;
     padding: 0;
     margin: 0;
+}
+
+#content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10%;
 }
 
 #menubox {
@@ -11,7 +19,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    background-color: rgb(214, 255, 241);
+    background-color: (223, 252, 229);
     margin: 0;
 }
 
@@ -46,7 +54,6 @@ body {
 }
 
 #section_1 {
-    margin-top: 10%;
     margin-left: 18%;
     margin-right: 18%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -55,4 +62,24 @@ body {
 
 #section_1 > * {
     margin-bottom: 15%;
+}
+
+#map {
+    height: 400px; /* Dowolna wysokość */
+    width: 80%;   /* Szerokość dopasowana do strony */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid rgb(125, 125, 125);
+}
+
+#rights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: rgb(125, 125, 125);
+    color: rgb(223, 252, 229);
+    padding: 10px;
 }

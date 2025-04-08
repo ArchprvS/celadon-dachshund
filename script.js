@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     // -- Buttons events --
+    
     start.addEventListener('click', () => {
         img.scrollIntoView({ behavior: 'smooth'});
     })

@@ -10,14 +10,21 @@
 
 <body>
     <div id="menubox">
-        <button class="option">START</button>
-        <button class="option">O NAS</button>
-        <button class="option">KONTAKT</button>
-        <button class="option">FAQ</button>
+        <button id="start" class="option">START</button>
+        <button id="about" class="option">O NAS</button>
+        <button id="contact" class="option">KONTAKT</button>
+        <button id="faq" class="option">FAQ</button>
     </div>
     <div class="gradient-bar"></div>
     <div id="content">
-        <div id="section_1">
+        <div id="img">
+            <img src="wdc-research-header.jpg">
+            <div class="img-text">
+                <h1>VET WIELUŃ</h1>
+                <p>KOMPLEKSOWA OPIEKA WETERYNARYJNA</p>
+            </div>
+        </div>
+        <div id="section_1" class="section_left">
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod porttitor mauris id vulputate. In
                 urna justo, fermentum vel felis eu, lacinia sagittis libero. Curabitur eu congue dolor, sed congue quam.
@@ -28,15 +35,8 @@
                 pulvinar nisl. Etiam et lobortis lorem. Sed at diam tortor. Nunc nec magna bibendum quam volutpat
                 aliquam. Maecenas quis leo quis magna volutpat lobortis.
             </p>
-            <p>
-                Nam non est eleifend, vestibulum neque non, ultricies nulla. Sed porta nisi non lectus sodales laoreet.
-                Aliquam lacus mi, placerat ut consectetur ut, sollicitudin at nisl. Ut malesuada est non sapien
-                ultricies vestibulum. Vivamus elementum pretium laoreet. Morbi quam nisi, aliquam vel rutrum tincidunt,
-                finibus sit amet sem. Phasellus euismod condimentum ultricies. Suspendisse nisi lectus, pretium eget
-                auctor sed, ornare sed nibh. Pellentesque vestibulum ante et dolor ultricies maximus. Cras a urna at ex
-                fermentum luctus sit amet vel ex. Suspendisse vel posuere nisi. Vivamus vel nibh quis velit feugiat
-                tincidunt eu sit amet ipsum. Quisque ut auctor mi. Mauris porttitor iaculis arcu vitae faucibus.
-            </p>
+        </div>
+        <div id="section_2" class="section_right">
             <p>
                 Aliquam tincidunt lorem id erat egestas elementum. Proin vestibulum sodales erat, tristique cursus
                 lectus volutpat et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus
@@ -47,6 +47,19 @@
                 dignissim, sollicitudin eros nec, vehicula risus. Suspendisse potenti. Morbi laoreet purus sed nunc
                 viverra rutrum.
             </p>
+        </div>
+        <div id="section_3" class="section_left">
+            <p>
+                Nam non est eleifend, vestibulum neque non, ultricies nulla. Sed porta nisi non lectus sodales laoreet.
+                Aliquam lacus mi, placerat ut consectetur ut, sollicitudin at nisl. Ut malesuada est non sapien
+                ultricies vestibulum. Vivamus elementum pretium laoreet. Morbi quam nisi, aliquam vel rutrum tincidunt,
+                finibus sit amet sem. Phasellus euismod condimentum ultricies. Suspendisse nisi lectus, pretium eget
+                auctor sed, ornare sed nibh. Pellentesque vestibulum ante et dolor ultricies maximus. Cras a urna at ex
+                fermentum luctus sit amet vel ex. Suspendisse vel posuere nisi. Vivamus vel nibh quis velit feugiat
+                tincidunt eu sit amet ipsum. Quisque ut auctor mi. Mauris porttitor iaculis arcu vitae faucibus.
+            </p>
+        </div>
+        <div id="section_4" class="section_right">
             <p>
                 Donec suscipit finibus diam, a porttitor tortor ullamcorper sed. Nam mattis eget massa non cursus. Etiam
                 porta sodales eros ut posuere. Etiam quis ex lobortis lorem ullamcorper eleifend id in augue. Nulla
@@ -87,7 +100,7 @@
                         featureType: "water",
                         elementType: "geometry",
                         stylers: [{ color: "#87CEEB" }],
-                    }, // Woda (nieco ciemniejszy niebieski)
+                    }, // Woda
                     {
                         featureType: "poi",
                         elementType: "geometry",
@@ -105,6 +118,6 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzMN_arW6O_wSYDVWDvT2blMZuOuiyil0&callback=initMap"
         async defer></script>
+        <script src="script.js"></script>
 </body>
-
 </html>

@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // -- Selectors --
+    const menubox = document.querySelector('#menubox');
+    const options = document.querySelectorAll('.option');
 
     const start = document.querySelector('#start');
     const about = document.querySelector('#about');
@@ -14,6 +16,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const map = document.querySelector('#map');
     const img = document.querySelector('#img');
+
+    // -- Mobile menu creation --
+    const mob_menu = document.createElement('button');
+    mob_menu.id = 'mobile-menu';
+    mob_menu.textContent = 'MENU';
+    mob_menu.style.cssText = `
+        width: 100%;
+        height: 40px;
+        text-align: right;
+        padding-right: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 15px;
+        border: none;
+        color: rgb(223, 252, 229);
+        background-color: rgb(125, 125, 125);
+        cursor: pointer;
+    `;
+
+    // Zmień tworzenie dropdown menu (usuń style display)
+    const dropdown = document.createElement('div');
+    dropdown.id = 'mobile-dropdown';
 
     // -- Scroll events -- 
 
@@ -71,5 +94,54 @@ document.addEventListener('DOMContentLoaded', () => {
     faq.addEventListener('click', () => {
         section_4.scrollIntoView({ behavior: 'smooth'});
     })
+    
+    // Zmień funkcję handleResponsiveMenu aby używała klas
+    function handleResponsiveMenu() {
+        const isMobile = window.innerWidth <= 600;
+        
+        if (isMobile) {
+            options.forEach(option => {
+                if (menubox.contains(option)) {
+                    menubox.removeChild(option);
+                }
+            });
+            
+            if (!menubox.contains(mob_menu)) {
+                menubox.appendChild(mob_menu);
+                document.body.appendChild(dropdown);
+                // Move all options to dropdown
+                options.forEach(option => dropdown.appendChild(option));
+            }
+        } else {
+            if (menubox.contains(mob_menu)) {
+                menubox.removeChild(mob_menu);
+            }
+            if (document.body.contains(dropdown)) {
+                document.body.removeChild(dropdown);
+            }
+            
+            options.forEach(option => {
+                if (!menubox.contains(option)) {
+                    menubox.appendChild(option);
+                }
+            });
+        }
+    }
 
-}) 
+    // Toggle dropdown when clicking mobile menu button
+    mob_menu.addEventListener('click', () => {
+        dropdown.classList.toggle('active');
+    });
+
+    // Initial setup
+    handleResponsiveMenu();
+    
+    // Listen for window resize
+    window.addEventListener('resize', handleResponsiveMenu);
+
+})
+
+
+
+
+

@@ -1,0 +1,6 @@
+In next commit
+
+1. Mark changes made by Claude, and make code review on them
+
+2. Add a feature -> current page section displays on left
+side of menu on mobile devices even when menu is closed

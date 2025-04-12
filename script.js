@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mob_menu.id = 'mobile-menu';
     mob_menu.textContent = 'MENU';
     mob_menu.style.cssText = `
-        width: 100%;
+        width: 29%;
         height: 40px;
         text-align: right;
         padding-right: 20px;
@@ -33,6 +33,26 @@ document.addEventListener('DOMContentLoaded', () => {
         background-color: rgb(125, 125, 125);
         cursor: pointer;
     `;
+    const indicator_box = document.createElement('div')
+    const indicator = document.createElement('div')
+    indicator_box.id = 'indicator_box';
+    indicator.id = 'indicator';
+    indicator.textContent = 'START'
+    indicator_box.style.cssText = `
+        width: 71%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 15px;
+        border: none;
+        color: rgb(223, 252, 229);
+        background-color: rgb(125, 125, 125);
+        cursor: pointer;
+    `;
+    indicator_box.appendChild(indicator);
+        
 
     // Zmień tworzenie dropdown menu (usuń style display)
     const dropdown = document.createElement('div');
@@ -107,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             
             if (!menubox.contains(mob_menu)) {
+                menubox.appendChild(indicator_box);
                 menubox.appendChild(mob_menu);
                 document.body.appendChild(dropdown);
                 // Move all options to dropdown
@@ -114,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else {
             if (menubox.contains(mob_menu)) {
+                menubox.removeChild(indicator_box);
                 menubox.removeChild(mob_menu);
             }
             if (document.body.contains(dropdown)) {

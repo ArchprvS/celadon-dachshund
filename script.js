@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // -- Selectors --
+
     const menubox = document.querySelector('#menubox');
     const options = document.querySelectorAll('.option');
 
@@ -16,6 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const map = document.querySelector('#map');
     const img = document.querySelector('#img');
+
+    let currentSection = 'START';
+    let previousSection = '';
 
     // -- Mobile menu creation --
     const mob_menu = document.createElement('button');
@@ -52,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cursor: pointer;
     `;
     indicator_box.appendChild(indicator);
-        
+
 
     // Zmień tworzenie dropdown menu (usuń style display)
     const dropdown = document.createElement('div');
@@ -72,60 +76,75 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
-        if (scrollPosition >= triggerPoint_1) {
-            about.classList.remove('current')
-            start.classList.add('current')
-            section_1.classList.add('slide');
+        function scrollTransitions(opt, sec) {
+            if (previousSection !== currentSection) {
+                options.forEach(option => {
+                    option.classList.remove('current')
+                })
+                opt.classList.add('current')
+                sec.classList.add('slide');
+                indicator.classList.remove('swap-section')
+                setTimeout(() => {
+                    indicator.classList.add('swap-section');
+                }, 10);
+                setTimeout(() => {
+                    indicator.innerText = currentSection;
+                }, 200);
+                previousSection = currentSection
+            }
         }
-        if (scrollPosition >= triggerPoint_2) {
-            contact.classList.remove('current')
-            start.classList.remove('current')
-            about.classList.add('current')
-            section_2.classList.add('slide');
-        }
-        if (scrollPosition >= triggerPoint_3) {
-            faq.classList.remove('current')
-            about.classList.remove('current')
-            contact.classList.add('current')
-            section_3.classList.add('slide');
-        }
+        
         if (scrollPosition >= triggerPoint_4) {
-            contact.classList.remove('current')
-            faq.classList.add('current')
-            section_4.classList.add('slide');
+            currentSection = 'FAQ'
+            scrollTransitions(faq, section_4)
         }
+        else if (scrollPosition >= triggerPoint_3) {
+            currentSection = 'KONTAKT'
+            scrollTransitions(contact, section_3)
+        }
+        else if (scrollPosition >= triggerPoint_2) {
+            currentSection = 'O NAS'
+            scrollTransitions(about, section_2)
+        }
+        else if (scrollPosition >= triggerPoint_1) {
+            currentSection = 'START'
+            scrollTransitions(start, section_1)
+        }
+
         if (scrollPosition >= triggerPoint_map) {
             map.classList.add('slide');
             setTimeout(() => { map.classList.add('appear') }, 200)
         }
+        console.log(previousSection, "prev")
+        console.log(currentSection, "curr")
     })
 
     // -- Buttons events --
-    
+
     start.addEventListener('click', () => {
-        img.scrollIntoView({ behavior: 'smooth'});
+        img.scrollIntoView({ behavior: 'smooth' });
     })
     about.addEventListener('click', () => {
-        section_2.scrollIntoView({ behavior: 'smooth'});
+        section_2.scrollIntoView({ behavior: 'smooth' });
     })
     contact.addEventListener('click', () => {
-        section_3.scrollIntoView({ behavior: 'smooth'});
+        section_3.scrollIntoView({ behavior: 'smooth' });
     })
     faq.addEventListener('click', () => {
-        section_4.scrollIntoView({ behavior: 'smooth'});
+        section_4.scrollIntoView({ behavior: 'smooth' });
     })
-    
+
     // Zmień funkcję handleResponsiveMenu aby używała klas
     function handleResponsiveMenu() {
         const isMobile = window.innerWidth <= 600;
-        
+
         if (isMobile) {
             options.forEach(option => {
                 if (menubox.contains(option)) {
                     menubox.removeChild(option);
                 }
             });
-            
+
             if (!menubox.contains(mob_menu)) {
                 menubox.appendChild(indicator_box);
                 menubox.appendChild(mob_menu);
@@ -133,7 +152,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Move all options to dropdown
                 options.forEach(option => dropdown.appendChild(option));
             }
-        } else {
+        }
+        else {
             if (menubox.contains(mob_menu)) {
                 menubox.removeChild(indicator_box);
                 menubox.removeChild(mob_menu);
@@ -141,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (document.body.contains(dropdown)) {
                 document.body.removeChild(dropdown);
             }
-            
+
             options.forEach(option => {
                 if (!menubox.contains(option)) {
                     menubox.appendChild(option);
@@ -157,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial setup
     handleResponsiveMenu();
-    
+
     // Listen for window resize
     window.addEventListener('resize', handleResponsiveMenu);
 

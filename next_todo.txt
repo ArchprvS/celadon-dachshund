@@ -1,11 +1,15 @@
-In next commit
+In next commit:
 
 1. Mark changes made by Claude, and make code review on them
 
-2. Add a feature -> current page section displays on left
-side of menu on mobile devices even when menu is closed (in progress)
+2. Slide photos from left and text from righrt side
 
-3. Spread script.js file to smaller files and use script.js as main
+3. Check out slider timing on other pages 
 
-4. Work on slider in start section
-(make a research how it looks on other pages)
+15.04.25:
+
+-- Precised animations of slider
+
+14.04.25:
+
+-- Added photo slider

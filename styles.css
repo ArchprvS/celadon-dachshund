@@ -82,9 +82,10 @@ body>* {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    margin: 30px;
+    margin-bottom: 30px;
     position: relative;
     box-sizing: border-box;
+    transform: translateY(-40px);
 }
 
 #img img {
@@ -115,14 +116,14 @@ body>* {
     font-size: 2.5em;
     margin-bottom: 0.5em;
     font-family: "Montserrat", sans-serif;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .img-text p {
     text-align: justify;
     font-size: 1.2em;
     margin: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* Wersja mobilna */
@@ -147,7 +148,7 @@ body>* {
         font-size: 2em;
         margin-bottom: 0.3em;
         font-family: "Montserrat", sans-serif;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.3s ease, transform 0.3s ease;
         opacity: 1;
     }
 
@@ -156,7 +157,7 @@ body>* {
         font-size: 0.8em;
         margin: 0;
         font-family: "Montserrat", sans-serif;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.3s ease, transform 0.3s ease;
         opacity: 1;
     }
 }
@@ -319,11 +320,31 @@ body>* {
 
 .switch_photo {
     opacity: 0.5;
-    transform: translateX(120%);
+    transform: translateX(-120%);
     transition: all 0.3s ease;
 }
 
-/* Wspólne style dla animacji */
+/* Text animation in slider */
+/*
 .switch_text {
-    opacity: 0 !important; /* Wymuszamy priorytet */
+    transform: translateX(10%) !important;
+    opacity: 0 !important; 
+}
+*/
+.switch_text {
+    animation: text-animation 1s ease-out;
+}
+
+@keyframes text-animation {
+    0% {
+        opacity: 0 
+    }
+    50% {
+        transform: translateX(10%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
 }

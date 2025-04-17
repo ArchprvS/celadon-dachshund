@@ -1,10 +1,8 @@
 In next commit:
 
-1. Mark changes made by Claude, and make code review on them
+1. Repair dropdown menu issue - it moves when text animates
 
-2. Slide photos from left and text from righrt side
-
-3. Check out slider timing on other pages 
+2. Check out slider timing on other pages 
 
 15.04.25:
 

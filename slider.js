@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             text_h1.classList.remove('switch_text')
             text_p.classList.remove('switch_text')
-        }, 800)
+        }, 1000)
     }
 
     setInterval(swap_jpeg, 4000)

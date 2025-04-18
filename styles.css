@@ -47,13 +47,11 @@ body>* {
     background: linear-gradient(to bottom, rgb(223, 252, 229), rgba(221, 250, 241, 0));
     margin: 0;
     z-index: 9;
-    /* Gradient pod paskiem, ale nad resztą treści */
 }
 
 .option {
     width: 25%;
     height: 40px;
-    /* get rid of hradcoding */
     font-family: "Montserrat", sans-serif;
     font-size: 15px;
     border: none;
@@ -216,6 +214,9 @@ body>* {
         transition: all 0.5s ease-in;
         margin-bottom: 50px;
     }
+    .option  {
+        padding-right: 20px !important;
+    }
 }
 
 #map {
@@ -328,7 +329,7 @@ body>* {
 /*
 .switch_text {
     transform: translateX(10%) !important;
-    opacity: 0 !important; 
+    opacity: 0 !important;
 }
 */
 .switch_text {
@@ -337,7 +338,7 @@ body>* {
 
 @keyframes text-animation {
     0% {
-        opacity: 0 
+        opacity: 0
     }
     50% {
         transform: translateX(10%);

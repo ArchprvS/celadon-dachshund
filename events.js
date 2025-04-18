@@ -62,11 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdown = document.createElement('div');
     dropdown.id = 'mobile-dropdown';
 
-    // -- Scroll events -- 
+    // -- Scroll events --
 
     window.addEventListener('scroll', () => {
 
-        // -- Trigger points -- 
+        // -- Trigger points --
 
         const triggerPoint_1 = section_1.offsetTop - 300;
         const triggerPoint_2 = section_2.offsetTop - 300;
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 previousSection = currentSection
             }
         }
-        
+
         if (scrollPosition >= triggerPoint_4) {
             currentSection = 'FAQ'
             scrollTransitions(faq, section_4)
@@ -182,9 +182,3 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', handleResponsiveMenu);
 
 })
-
-
-
-
-
-

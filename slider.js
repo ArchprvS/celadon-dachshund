@@ -33,5 +33,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     setInterval(swap_jpeg, 4000)
-   
+
 })

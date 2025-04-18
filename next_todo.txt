@@ -1,8 +1,10 @@
 In next commit:
 
-1. Repair dropdown menu issue - it moves when text animates
+1. Repair dropdown menu issue - it moves when text animates (repaired itself (!?))
 
-2. Check out slider timing on other pages 
+2. Animation of NavBar - text spread in PC version, moves left in mobile
+
+3. Check out slider timing on other pages
 
 15.04.25:
 

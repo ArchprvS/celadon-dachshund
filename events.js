@@ -29,9 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
         width: 29%;
         height: 40px;
         text-align: right;
-        padding-right: 20px;
+        padding-right: 30px;
         font-family: "Montserrat", sans-serif;
         font-size: 15px;
+        letter-spacing: 2px;
         border: none;
         color: rgb(223, 252, 229);
         background-color: rgb(125, 125, 125);
@@ -41,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const indicator = document.createElement('div')
     indicator_box.id = 'indicator_box';
     indicator.id = 'indicator';
-    indicator.textContent = 'START'
+    indicator.textContent = 'START';
     indicator_box.style.cssText = `
         width: 71%;
         height: 40px;
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         padding-left: 20px;
         font-family: "Montserrat", sans-serif;
         font-size: 15px;
+        letter-spacing: 2px;
         border: none;
         color: rgb(223, 252, 229);
         background-color: rgb(125, 125, 125);
@@ -115,8 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
             map.classList.add('slide');
             setTimeout(() => { map.classList.add('appear') }, 200)
         }
-        console.log(previousSection, "prev")
-        console.log(currentSection, "curr")
     })
 
     // -- Buttons events --

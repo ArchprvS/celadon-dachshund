@@ -1,10 +1,16 @@
 In next commit:
 
-1. Repair dropdown menu issue - it moves when text animates (repaired itself (!?))
+1. Check if background color needs to be lighter
+2. Move contact section to be second one, and build proper
+contact section (phone, email, hours, etc. and animations for them)
+3. Check how to minimalize reflow and repaint and mainly
+optimize the page
 
-2. Animation of NavBar - text spread in PC version, moves left in mobile
+19.04.25:
 
-3. Check out slider timing on other pages
+-- Repaired moving mobile menu bar
+-- Added spreading letters animation
+and letters spacing in menu and slider
 
 15.04.25:
 

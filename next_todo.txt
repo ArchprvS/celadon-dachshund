@@ -5,6 +5,12 @@ In next commit:
 contact section (phone, email, hours, etc. and animations for them)
 3. Check how to minimalize reflow and repaint and mainly
 optimize the page
+4. Add debounce when toggling classes in mobile and desktop
+5. Add debounce to scrolling
+
+21.04.25:
+
+-- Added eslint to project
 
 19.04.25:
 

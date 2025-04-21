@@ -19,19 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
         else {
             current_jpeg = first_jpeg;
         }
-        img.classList.add('switch_photo')
+        img.classList.add('switch_photo');
         setTimeout(() => {
             img.src = current_jpeg;
-            img.classList.remove('switch_photo')
-        }, 300)
-        text_h1.classList.add('switch_text')
-        text_p.classList.add('switch_text')
+            img.classList.remove('switch_photo');
+        }, 300);
+        text_h1.classList.add('switch_text');
+        text_p.classList.add('switch_text');
         setTimeout(() => {
-            text_h1.classList.remove('switch_text')
-            text_p.classList.remove('switch_text')
-        }, 1000)
+            text_h1.classList.remove('switch_text');
+            text_p.classList.remove('switch_text');
+        }, 1000);
     }
 
-    setInterval(swap_jpeg, 4000)
+    setInterval(swap_jpeg, 4000);
 
-})
+});

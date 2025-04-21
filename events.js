@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
         background-color: rgb(125, 125, 125);
         cursor: pointer;
     `;
-    const indicator_box = document.createElement('div')
-    const indicator = document.createElement('div')
+    const indicator_box = document.createElement('div');
+    const indicator = document.createElement('div');
     indicator_box.id = 'indicator_box';
     indicator.id = 'indicator';
     indicator.textContent = 'START';
@@ -81,58 +81,58 @@ document.addEventListener('DOMContentLoaded', () => {
         function scrollTransitions(opt, sec) {
             if (previousSection !== currentSection) {
                 options.forEach(option => {
-                    option.classList.remove('current')
-                })
-                opt.classList.add('current')
+                    option.classList.remove('current');
+                });
+                opt.classList.add('current');
                 sec.classList.add('slide');
-                indicator.classList.remove('swap-section')
+                indicator.classList.remove('swap-section');
                 setTimeout(() => {
                     indicator.classList.add('swap-section');
                 }, 10);
                 setTimeout(() => {
                     indicator.innerText = currentSection;
                 }, 200);
-                previousSection = currentSection
+                previousSection = currentSection;
             }
         }
 
         if (scrollPosition >= triggerPoint_4) {
-            currentSection = 'FAQ'
-            scrollTransitions(faq, section_4)
+            currentSection = 'FAQ';
+            scrollTransitions(faq, section_4);
         }
         else if (scrollPosition >= triggerPoint_3) {
-            currentSection = 'KONTAKT'
-            scrollTransitions(contact, section_3)
+            currentSection = 'KONTAKT';
+            scrollTransitions(contact, section_3);
         }
         else if (scrollPosition >= triggerPoint_2) {
-            currentSection = 'O NAS'
-            scrollTransitions(about, section_2)
+            currentSection = 'O NAS';
+            scrollTransitions(about, section_2);
         }
         else if (scrollPosition >= triggerPoint_1) {
-            currentSection = 'START'
-            scrollTransitions(start, section_1)
+            currentSection = 'START';
+            scrollTransitions(start, section_1);
         }
 
         if (scrollPosition >= triggerPoint_map) {
             map.classList.add('slide');
-            setTimeout(() => { map.classList.add('appear') }, 200)
+            setTimeout(() => { map.classList.add('appear'); }, 200);
         }
-    })
+    });
 
     // -- Buttons events --
 
     start.addEventListener('click', () => {
         img.scrollIntoView({ behavior: 'smooth' });
-    })
+    });
     about.addEventListener('click', () => {
         section_2.scrollIntoView({ behavior: 'smooth' });
-    })
+    });
     contact.addEventListener('click', () => {
         section_3.scrollIntoView({ behavior: 'smooth' });
-    })
+    });
     faq.addEventListener('click', () => {
         section_4.scrollIntoView({ behavior: 'smooth' });
-    })
+    });
 
     // Zmień funkcję handleResponsiveMenu aby używała klas
     function handleResponsiveMenu() {
@@ -181,4 +181,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Listen for window resize
     window.addEventListener('resize', handleResponsiveMenu);
 
-})
+});

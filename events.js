@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const options = document.querySelectorAll('.option');
 
     const start = document.querySelector('#start');
-    const about = document.querySelector('#about');
     const contact = document.querySelector('#contact');
+    const about = document.querySelector('#about');
     const faq = document.querySelector('#faq');
 
     const section_1 = document.querySelector('#section_1');
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         font-size: 15px;
         letter-spacing: 2px;
         border: none;
-        color: rgb(223, 252, 229);
+        color: #f0fcf8;
         background-color: rgb(125, 125, 125);
         cursor: pointer;
     `;
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         font-size: 15px;
         letter-spacing: 2px;
         border: none;
-        color: rgb(223, 252, 229);
+        color: #f0fcf8;
         background-color: rgb(125, 125, 125);
         cursor: pointer;
     `;
@@ -101,12 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollTransitions(faq, section_4);
         }
         else if (scrollPosition >= triggerPoint_3) {
-            currentSection = 'KONTAKT';
-            scrollTransitions(contact, section_3);
+            currentSection = 'O NAS';
+            scrollTransitions(about, section_3);
         }
         else if (scrollPosition >= triggerPoint_2) {
-            currentSection = 'O NAS';
-            scrollTransitions(about, section_2);
+            currentSection = 'KONTAKT';
+            scrollTransitions(contact, section_2);
         }
         else if (scrollPosition >= triggerPoint_1) {
             currentSection = 'START';
@@ -124,14 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
     start.addEventListener('click', () => {
         img.scrollIntoView({ behavior: 'smooth' });
     });
+    contact.addEventListener('click', () => {
+        section_1.scrollIntoView({ behavior: 'smooth' });
+    });
     about.addEventListener('click', () => {
         section_2.scrollIntoView({ behavior: 'smooth' });
     });
-    contact.addEventListener('click', () => {
-        section_3.scrollIntoView({ behavior: 'smooth' });
-    });
     faq.addEventListener('click', () => {
-        section_4.scrollIntoView({ behavior: 'smooth' });
+        section_3.scrollIntoView({ behavior: 'smooth' });
     });
 
     // Zmień funkcję handleResponsiveMenu aby używała klas

@@ -1,12 +1,20 @@
 In next commit:
 
-1. Check if background color needs to be lighter
-2. Move contact section to be second one, and build proper
+()-- Work on contact section
 contact section (phone, email, hours, etc. and animations for them)
-3. Check how to minimalize reflow and repaint and mainly
+()-- Check how to minimalize reflow and repaint and mainly
 optimize the page
-4. Add debounce when toggling classes in mobile and desktop
-5. Add debounce to scrolling
+()-- Add debounce when toggling classes in mobile and desktop
+()-- Add debounce to scrolling
+()-- Section with contact should appear immediately when page is loaded (with animation - try about 1s delay)
+
+22.04.25:
+
+-- Updated background to lighter celadon
+-- Started working on contact section, added favicons from:
+https://www.flaticon.com/icon-fonts-most-downloaded/3?weight=thin&type=uicon
+-- Added reasources folder
+-- Replaced 'ABOUT' and 'CONTACT' sections
 
 21.04.25:
 

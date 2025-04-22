@@ -11,8 +11,8 @@
 <body>
     <div id="menubox">
         <button id="start" class="option">START</button>
-        <button id="about" class="option">O NAS</button>
         <button id="contact" class="option">KONTAKT</button>
+        <button id="about" class="option">O NAS</button>
         <button id="faq" class="option">FAQ</button>
     </div>
     <div class="gradient-bar"></div>
@@ -25,16 +25,15 @@
             </div>
         </div>
         <div id="section_1" class="section_left">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod porttitor mauris id vulputate. In
-                urna justo, fermentum vel felis eu, lacinia sagittis libero. Curabitur eu congue dolor, sed congue quam.
-                Etiam nisl ipsum, luctus nec leo vel, maximus ullamcorper quam. Nullam porta vel mi ac porttitor. Donec
-                vel facilisis justo. Nulla at sagittis felis. Ut bibendum auctor tortor. Vestibulum ante ipsum primis in
-                faucibus orci luctus et ultrices posuere cubilia curae; Nulla porta, velit id interdum auctor, dui
-                mauris tristique odio, ut rhoncus turpis sem eget mi. Nunc ut diam eget orci hendrerit semper at
-                pulvinar nisl. Etiam et lobortis lorem. Sed at diam tortor. Nunc nec magna bibendum quam volutpat
-                aliquam. Maecenas quis leo quis magna volutpat lobortis.
-            </p>
+            <h2>KONTAKT</h2>
+            <div id="phone">
+                <img src="resources/phoneico.png" alt="Ikona telefonu" width="16" height="16">
+                <h3>607 988 910</h3>
+            </div>
+            <div id="email">
+                <img src="resources/emailico.png" alt="Ikona telefonu" width="16" height="16">
+                <h3>info@vet.wielun.pl</h3>
+            </div>
         </div>
         <div id="section_2" class="section_right">
             <p>
@@ -75,7 +74,7 @@
     <div id="rights">Copyright - ArchprvS</div>
     <script>
         function initMap() {
-            // Współrzędne lokalizacji 
+            // Współrzędne lokalizacji
             const location = { lat: 51.21417, lng: 18.58522 };
 
             // Tworzenie mapy z ciemnym stylem
@@ -83,7 +82,7 @@
                 zoom: 17,
                 center: location,
                 styles: [
-                    { elementType: "geometry", stylers: [{ color: "#D6FFF1" }] }, // Ciemniejszy szary (tło)
+                    { elementType: "geometry", stylers: [{ color: "#f0fcf8" }] }, // Ciemniejszy szary (tło)
                     { elementType: "labels.text.stroke", stylers: [{ color: "#E0E0E0" }] }, // Jasnoszary (obramowanie tekstu)
                     { elementType: "labels.text.fill", stylers: [{ color: "#333333" }] }, // Ciemny tekst
                     {

@@ -17,7 +17,7 @@ body {
     position: relative;
 }
 
-body>* {
+body > * {
     font-family: "Montserrat", sans-serif;
 }
 
@@ -180,7 +180,7 @@ body>* {
 /* -- SECTIONS -- */
 
 .section_left {
-    width: 64%;
+    width: 80%;
     margin: 0 auto;
     box-sizing: border-box;
     text-align: justify;
@@ -193,7 +193,7 @@ body>* {
 }
 
 .section_right {
-    width: 64%;
+    width: 80%;
     margin: 0 auto;
     box-sizing: border-box;
     text-align: justify;
@@ -209,9 +209,8 @@ body>* {
 
 @media (max-width: 600px) {
     .section_left {
-        width: 84%;
-        margin-left: 18%;
-        margin-right: 18%;
+        width: 92%;
+        margin: 0 auto;
         text-align: justify;
         font-family: "Montserrat", sans-serif;
         font-size: 14px;
@@ -223,9 +222,8 @@ body>* {
     }
 
     .section_right {
-        width: 84%;
-        margin-left: 18%;
-        margin-right: 18%;
+        width: 92%;
+        margin: 0 auto;
         text-align: justify;
         font-family: "Montserrat", sans-serif;
         font-size: 14px;
@@ -248,30 +246,75 @@ body>* {
 
 /* -- Contact section -- */
 
-#section_1 > h2 {
+#contact_header {
     text-align: center;
     font-weight: 250;
     letter-spacing: 2px;
 }
-#phone {
+#section_1 {
     display: flex;
     align-items: center;
     flex-direction: row;
 }
-#phone > h3 {
-    font-weight: 250;
-    letter-spacing: 2px;
-    margin-left: 10px;
+#contact_right_bar, #contact_left_bar {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
-#email {
+#contact_left_bar {
+    justify-content: flex-start;
+}
+#contact_right_bar {
+    justify-content: flex-end;
+}
+#phone, #email{
+    justify-content: flex-start;
+    transform: translateX( -40%);
+    opacity: 0;
+    transition: all 0.5s ease-in;
+}
+#hours, #location {
+    justify-content: flex-end;
+    transform: translateX( 40%);
+    opacity: 0;
+    transition: all 0.5s ease-in;
+}
+#phone, #email, #hours, #location {
     display: flex;
     align-items: center;
     flex-direction: row;
+    margin: 10px;
 }
-#email > h3 {
+#phone > h3, #email > h3 {
     font-weight: 250;
     letter-spacing: 2px;
     margin-left: 10px;
+    text-align: left;
+}
+#hours > h3, #location > h3 {
+    font-weight: 250;
+    letter-spacing: 2px;
+    margin-right: 10px;
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    #phone, #email {
+        justify-content: flex-start;
+        transform: scale(0.8) translateX(-40%);
+        opacity: 0;
+        margin: 10px;
+        transition: all 0.5s ease-in;
+    }
+
+    #hours, #location {
+        justify-content: flex-end;
+        transform: scale(0.8) translateX(40%);
+        opacity: 0;
+        margin: 10px;
+        transition: all 0.5s ease-in;
+
+    }
 }
 
 /* -- Map -- */
@@ -297,6 +340,12 @@ body>* {
     padding: 10px;
 }
 
+.contact-slide {
+    opacity: 1 !important;
+    transform: translateX(0) scale(0.8) !important; /* zachowujemy skalowanie */
+}
+
+/* Zachowaj oryginalną klasę .slide dla innych elementów */
 .slide {
     opacity: 1;
     transform: translateX(0);

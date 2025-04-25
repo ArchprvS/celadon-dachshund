@@ -1,12 +1,16 @@
 In next commit:
 
-()-- Work on contact section
-contact section (phone, email, hours, etc. and animations for them)
+()-- Optimize contact section responsivenes, add map below current elements
 ()-- Check how to minimalize reflow and repaint and mainly
 optimize the page
 ()-- Add debounce when toggling classes in mobile and desktop
 ()-- Add debounce to scrolling
 ()-- Section with contact should appear immediately when page is loaded (with animation - try about 1s delay)
+
+25.04.25:
+
+-- Added all info sections (hours, location)
+-- Animation on sections appearance
 
 22.04.25:
 

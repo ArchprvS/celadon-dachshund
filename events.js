@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const map = document.querySelector('#map');
     const img = document.querySelector('#img');
 
+    const phone = document.querySelector('#phone');
+    const email = document.querySelector('#email');
+    const hours = document.querySelector('#hours');
+    const location = document.querySelector('#location');
+
     let currentSection = 'START';
     let previousSection = '';
 
@@ -78,6 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
+        // -- Scroll Transition function
+
         function scrollTransitions(opt, sec) {
             if (previousSection !== currentSection) {
                 options.forEach(option => {
@@ -96,6 +103,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // -- Contact Info Apperance function
+
+        function slideInfo() {
+            let top_sections = [phone, hours];
+            let bottom_sections = [email, location];
+            setTimeout(() => {
+                top_sections.forEach(section => section.classList.add('contact-slide'));
+            }, 500);
+            setTimeout(() => {
+                bottom_sections.forEach(section => section.classList.add('contact-slide'));
+            }, 1000);
+        }
+
+        // -- Scroll Events
+
         if (scrollPosition >= triggerPoint_4) {
             currentSection = 'FAQ';
             scrollTransitions(faq, section_4);
@@ -111,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (scrollPosition >= triggerPoint_1) {
             currentSection = 'START';
             scrollTransitions(start, section_1);
+            slideInfo();
         }
 
         if (scrollPosition >= triggerPoint_map) {

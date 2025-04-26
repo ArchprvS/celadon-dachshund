@@ -1,11 +1,17 @@
 In next commit:
 
-()-- Optimize contact section responsivenes, add map below current elements
 ()-- Check how to minimalize reflow and repaint and mainly
 optimize the page
 ()-- Add debounce when toggling classes in mobile and desktop
 ()-- Add debounce to scrolling
 ()-- Section with contact should appear immediately when page is loaded (with animation - try about 1s delay)
+
+26.04.25:
+
+-- Moved map below contact section
+-- Repaired section incorrectnes in menu
+-- Moving to section after clicking option - moved rect 200px up
+-- Added headers to sections
 
 25.04.25:
 

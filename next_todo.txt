@@ -1,13 +1,18 @@
 In next commit:
 
+()-- Work on ABOUT section
+()-- Work on better slider animation
 ()-- Check how to minimalize reflow and repaint and mainly
 optimize the page
-()-- Add debounce when toggling classes in mobile and desktop
-()-- Add debounce to scrolling
-()-- Section with contact should appear immediately when page is loaded (with animation - try about 1s delay)
+()-- Debounce bug - when scrolling fast not all sections appear
+
+27.04.25:
+
+-- Applied debounce to scroll events
 
 26.04.25:
 
+-- Section with contact appears immediately when page is loaded
 -- Moved map below contact section
 -- Repaired section incorrectnes in menu
 -- Moving to section after clicking option - moved rect 200px up

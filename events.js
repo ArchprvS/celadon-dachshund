@@ -67,11 +67,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const dropdown = document.createElement("div");
   dropdown.id = "mobile-dropdown";
 
+  // -- Debounce function
+
+  function debounce(func, delay) {
+    let timerId;
+    return function (...args) {
+      const context = this;
+      clearTimeout(timerId);
+      timerId = setTimeout(() => {
+        func.apply(context, args);
+      }, delay);
+    };
+  }
+
   // -- Scroll events --
 
-  window.addEventListener("scroll", () => {
-    // -- Trigger points --
-
+  function scrollEvents() {
     const triggerPoint_1 = section_1.offsetTop - 300;
     const triggerPoint_2 = section_2.offsetTop - 300;
     const triggerPoint_3 = section_3.offsetTop - 300;
@@ -100,19 +111,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // -- Scroll Events
-
+    // -- Trigger points check
     if (scrollPosition >= triggerPoint_3) {
-      currentSection = "FAQ";
-      scrollTransitions(faq, section_3);
+        currentSection = "FAQ";
+        scrollTransitions(faq, section_3);
     } else if (scrollPosition >= triggerPoint_2) {
-      currentSection = "O NAS";
-      scrollTransitions(about, section_2);
+        currentSection = "O NAS";
+        scrollTransitions(about, section_2);
     } else if (scrollPosition >= triggerPoint_1) {
-      currentSection = "KONTAKT";
-      scrollTransitions(contact, section_1);
+        currentSection = "KONTAKT";
+        scrollTransitions(contact, section_1);
+    } else if (scrollPosition <= 10) { // Dodany warunek dla sekcji START
+        currentSection = "START";
+        scrollTransitions(start, img);
     }
-  });
+  }
+
+  const handleDebounce = debounce(scrollEvents, 100);
+
+  window.addEventListener("scroll", handleDebounce);
 
   // -- Buttons events --
 

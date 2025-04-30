@@ -86,7 +86,6 @@ body > * {
 }
 
 /* SLIDER */
-
 #img {
     width: 100%;
     max-width: 100vw;
@@ -95,13 +94,47 @@ body > * {
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
+    height: 50vh; /* Default height for desktop */
 }
 
-#img img {
+/* Media queries for responsive height */
+@media (max-width: 768px) {
+    #img {
+        height: 40vh; /* Tablet size */
+    }
+}
+
+@media (max-width: 600px) {
+    #img {
+        height: 30vh; /* Mobile size */
+        margin-bottom: 5px; /* Smaller margin on mobile */
+    }
+}
+
+.photo, .photo_sec {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    will-change: transform;
+}
+
+.center_photo {
+    transform: translateX(0);
+    z-index: 2;
+}
+
+.left_photo {
+    transform: translateX(-100%);
+    z-index: 1;
+}
+
+.next_photo {
+    transform: translateX(100%);
+    z-index: 1;
 }
 
 .img-text {
@@ -116,7 +149,7 @@ body > * {
     padding: 30px 0;
     padding-left: 28px;
     background: rgba(0, 0, 0, 0.4);
-    /* Przezroczysty czarny pasek */
+    z-index: 3;
 }
 
 /* Wersja desktopowa */
@@ -164,7 +197,7 @@ body > * {
         margin-bottom: 0.3em;
         font-family: "Montserrat", sans-serif;
         transition: opacity 0.3s ease, transform 0.3s ease;
-        opacity: 1;
+        /* usuń opacity: 1; */
     }
 
     .img-text p {
@@ -173,8 +206,15 @@ body > * {
         margin: 0;
         font-family: "Montserrat", sans-serif;
         transition: opacity 0.3s ease, transform 0.3s ease;
-        opacity: 1;
+        /* usuń opacity: 1; */
     }
+}
+
+/* Dodaj uniwersalną klasę switch_text, która będzie działać na wszystkich szerokościach ekranu */
+.switch_text {
+    opacity: 0 !important; /* dodaj !important aby nadpisać inne style */
+    transform: translateX(10%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* -- SECTIONS -- */
@@ -415,39 +455,5 @@ body > * {
 
     100% {
         transform: translateX(0px);
-    }
-}
-
-
-/* SLIDER */
-
-.photo {
-    opacity: 1;
-    transition: all 0.3s ease;
-}
-
-.switch_photo {
-    opacity: 0.5;
-    transform: translateX(-120%);
-    transition: all 0.3s ease;
-}
-
-/* Text animation in slider */
-
-.switch_text {
-    animation: text-animation 1s ease-out;
-}
-
-@keyframes text-animation {
-    0% {
-        opacity: 0
-    }
-    50% {
-        transform: translateX(10%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0%);
-        opacity: 1;
     }
 }

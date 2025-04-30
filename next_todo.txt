@@ -1,10 +1,13 @@
 In next commit:
 
 ()-- Work on ABOUT section
-()-- Work on better slider animation
 ()-- Check how to minimalize reflow and repaint and mainly
 optimize the page
 ()-- Debounce bug - when scrolling fast not all sections appear
+
+28.04.25:
+
+-- Optimized slider animation
 
 27.04.25:
 

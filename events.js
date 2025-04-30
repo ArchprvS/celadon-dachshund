@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // -- Trigger points check
     if (scrollPosition >= triggerPoint_3) {
         currentSection = "FAQ";
+        section_2.classList.add("slide"); // Add other sections (this case section_2) if scrolled fast to the end
         scrollTransitions(faq, section_3);
     } else if (scrollPosition >= triggerPoint_2) {
         currentSection = "O NAS";
@@ -121,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (scrollPosition >= triggerPoint_1) {
         currentSection = "KONTAKT";
         scrollTransitions(contact, section_1);
-    } else if (scrollPosition <= 10) { // Dodany warunek dla sekcji START
+    } else if (scrollPosition <= 10) {
         currentSection = "START";
         scrollTransitions(start, img);
     }

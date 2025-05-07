@@ -3,7 +3,10 @@ In next commit:
 ()-- Work on ABOUT section
 ()-- Check how to minimalize reflow and repaint and mainly
 optimize the page
-()-- Debounce bug - when scrolling fast not all sections appear
+
+30.04.25:
+
+-- Repaired debounce bug
 
 28.04.25:
 

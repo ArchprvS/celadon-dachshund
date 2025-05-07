@@ -291,6 +291,9 @@ body > * {
     font-weight: 250;
     letter-spacing: 2px;
 }
+#title_name {
+    font-weight: 500;
+}
 #section_1 {
     display: flex;
     align-items: center;

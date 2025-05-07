@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const section_1 = document.querySelector("#section_1");
   const section_2 = document.querySelector("#section_2");
   const section_3 = document.querySelector("#section_3");
-  //const section_4 = document.querySelector('#section_4');
+
+  const par_about = document.querySelector(".machine_par");
 
   const map = document.querySelector("#map");
   const img = document.querySelector("#img");
@@ -24,6 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentSection = "START";
   let previousSection = "";
+
+  // -- Texts
+
+  let about_text = `Specjalista w dziedzinie chorób psów i kotów oraz doświadczony specjalista chirurg. Ukończyłem studia na Wydziale Medycyny Weterynaryjnej Uniwersytetu Przyrodniczego w Lublinie, gdzie zdobyłem solidną wiedzę teoretyczną oraz praktyczne umiejętności w zakresie leczenia małych zwierząt.
+Moja praktyka zawodowa koncentruje się na kompleksowej diagnostyce i leczeniu schorzeń psów i kotów, ze szczególnym uwzględnieniem zabiegów chirurgicznych. Dążę do zapewnienia najwyższej jakości opieki weterynaryjnej, łącząc profesjonalizm z indywidualnym podejściem do każdego pacjenta.
+Nieustannie poszerzam swoją wiedzę poprzez udział w specjalistycznych szkoleniach i konferencjach, aby oferować opiekę zgodną z najnowszymi standardami medycyny weterynaryjnej.
+Zapraszam do mojego gabinetu, gdzie z zaangażowaniem zadbam o zdrowie Państwa czworonożnych przyjaciół.`;
 
   // -- Mobile menu creation --
   const mob_menu = document.createElement("button");
@@ -80,6 +88,23 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
+  // -- Machine Writing effect
+
+  let text_present = false;
+
+  function machineWriting(paragraph, text) {
+    if (!text_present) {
+      text_present = true;
+      let delay = 0;
+      for (let i = 0; i < text.length; i++) {
+        setTimeout(() => {
+          paragraph.textContent += text[i];
+        }, delay);
+        delay += 10;
+      }
+    }
+  }
+
   // -- Scroll events --
 
   function scrollEvents() {
@@ -113,18 +138,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // -- Trigger points check
     if (scrollPosition >= triggerPoint_3) {
-        currentSection = "FAQ";
-        section_2.classList.add("slide"); // Add other sections (this case section_2) if scrolled fast to the end
-        scrollTransitions(faq, section_3);
+      currentSection = "FAQ";
+      section_2.classList.add("slide"); // Add other sections (this case section_2) if scrolled fast to the end
+      scrollTransitions(faq, section_3);
     } else if (scrollPosition >= triggerPoint_2) {
-        currentSection = "O NAS";
-        scrollTransitions(about, section_2);
+      currentSection = "O NAS";
+      machineWriting(par_about, about_text);
+      scrollTransitions(about, section_2);
     } else if (scrollPosition >= triggerPoint_1) {
-        currentSection = "KONTAKT";
-        scrollTransitions(contact, section_1);
+      currentSection = "KONTAKT";
+      scrollTransitions(contact, section_1);
     } else if (scrollPosition <= 10) {
-        currentSection = "START";
-        scrollTransitions(start, img);
+      currentSection = "START";
+      scrollTransitions(start, img);
     }
   }
 

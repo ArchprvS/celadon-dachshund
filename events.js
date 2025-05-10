@@ -28,10 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // -- Texts
 
-  let about_text = `Specjalista w dziedzinie chorób psów i kotów oraz doświadczony specjalista chirurg. Ukończyłem studia na Wydziale Medycyny Weterynaryjnej Uniwersytetu Przyrodniczego w Lublinie, gdzie zdobyłem solidną wiedzę teoretyczną oraz praktyczne umiejętności w zakresie leczenia małych zwierząt.
-Moja praktyka zawodowa koncentruje się na kompleksowej diagnostyce i leczeniu schorzeń psów i kotów, ze szczególnym uwzględnieniem zabiegów chirurgicznych. Dążę do zapewnienia najwyższej jakości opieki weterynaryjnej, łącząc profesjonalizm z indywidualnym podejściem do każdego pacjenta.
-Nieustannie poszerzam swoją wiedzę poprzez udział w specjalistycznych szkoleniach i konferencjach, aby oferować opiekę zgodną z najnowszymi standardami medycyny weterynaryjnej.
-Zapraszam do mojego gabinetu, gdzie z zaangażowaniem zadbam o zdrowie Państwa czworonożnych przyjaciół.`;
+  let about_text = `
+Lekarz weterynarii, specjalista w dziedzinie chorób psów i kotów oraz specjalista chirurg. Absolwent Wydziału Medycyny Weterynaryjnej Uniwersytetu Przyrodniczego w Lublinie.
+Specjalizuje się w kompleksowej diagnostyce, leczeniu oraz chirurgii psów i kotów. Dążąc do zapewnienia opieki na najwyższym poziomie, stale poszerza wiedzę zgodnie z aktualnymi standardami medycyny weterynaryjnej.`;
 
   // -- Mobile menu creation --
   const mob_menu = document.createElement("button");
@@ -141,6 +140,7 @@ Zapraszam do mojego gabinetu, gdzie z zaangażowaniem zadbam o zdrowie Państwa 
       currentSection = "FAQ";
       section_2.classList.add("slide"); // Add other sections (this case section_2) if scrolled fast to the end
       scrollTransitions(faq, section_3);
+      machineWriting(par_about, about_text);
     } else if (scrollPosition >= triggerPoint_2) {
       currentSection = "O NAS";
       machineWriting(par_about, about_text);

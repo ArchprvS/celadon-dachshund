@@ -1,8 +1,11 @@
 In next commit:
 
 ()-- Work on ABOUT section
-()-- Check how to minimalize reflow and repaint and mainly
-optimize the page
+()-- Work on machine writing sections (better to put this effect in FAQ section not in ABOUT)
+
+10.05.25:
+
+-- Optimized machineWriting apperance
 
 30.04.25:
 

@@ -1,7 +1,10 @@
 In next commit:
 
-()-- Work on ABOUT section
-()-- Work on machine writing sections (better to put this effect in FAQ section not in ABOUT)
+()-- FAQ:
+- remove event listener after click
+- style the questions (they should look like CtA)
+
+()-- Work on ABOUT section (add only photo and remove machineWriting effect)
 
 10.05.25:
 

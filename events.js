@@ -89,20 +89,20 @@ Specjalizuje się w kompleksowej diagnostyce, leczeniu oraz chirurgii psów i ko
 
   // -- Machine Writing effect
 
-  let text_present = false;
+  // let text_present = false;
 
-  function machineWriting(paragraph, text) {
-    if (!text_present) {
-      text_present = true;
-      let delay = 0;
-      for (let i = 0; i < text.length; i++) {
-        setTimeout(() => {
-          paragraph.textContent += text[i];
-        }, delay);
-        delay += 10;
-      }
-    }
-  }
+  // function machineWriting(paragraph, text) {
+  //   if (!text_present) {
+  //     text_present = true;
+  //     let delay = 0;
+  //     for (let i = 0; i < text.length; i++) {
+  //       setTimeout(() => {
+  //         paragraph.textContent += text[i];
+  //       }, delay);
+  //       delay += 10;
+  //     }
+  //   }
+  // }
 
   // -- Scroll events --
 
@@ -140,10 +140,10 @@ Specjalizuje się w kompleksowej diagnostyce, leczeniu oraz chirurgii psów i ko
       currentSection = "FAQ";
       section_2.classList.add("slide"); // Add other sections (this case section_2) if scrolled fast to the end
       scrollTransitions(faq, section_3);
-      machineWriting(par_about, about_text);
+      //machineWriting(par_about, about_text);
     } else if (scrollPosition >= triggerPoint_2) {
       currentSection = "O NAS";
-      machineWriting(par_about, about_text);
+      //machineWriting(par_about, about_text);
       scrollTransitions(about, section_2);
     } else if (scrollPosition >= triggerPoint_1) {
       currentSection = "KONTAKT";
@@ -155,7 +155,6 @@ Specjalizuje się w kompleksowej diagnostyce, leczeniu oraz chirurgii psów i ko
   }
 
   const handleDebounce = debounce(scrollEvents, 100);
-
   window.addEventListener("scroll", handleDebounce);
 
   // -- Buttons events --
@@ -253,4 +252,25 @@ Specjalizuje się w kompleksowej diagnostyce, leczeniu oraz chirurgii psów i ko
 
   // Listen for window resize
   window.addEventListener("resize", handleResponsiveMenu);
+
+  const qaElements = document.querySelectorAll(".qa");
+
+  function machineWriting(paragraph, text) {
+    let delay = 0;
+    for (let i = 0; i < text.length; i++) {
+      setTimeout(() => {
+        paragraph.textContent += text[i];
+      }, delay);
+      delay += 10;
+    }
+    question.removeEventListener("click", event_a);
+  }
+
+  qaElements.forEach((element) => {
+    let question = element.querySelector("h3");
+    let answer_text = element.querySelector(".answer_text").innerText;
+    let answer_box = element.querySelector(".answer_box");
+    const event_a = () => {machineWriting(answer_box, answer_text);};
+    question.addEventListener("click", event_a);
+  });
 });

@@ -1,10 +1,16 @@
 In next commit:
 
 ()-- FAQ:
-- remove event listener after click
+- ask about questions to place
 - style the questions (they should look like CtA)
 
 ()-- Work on ABOUT section (add only photo and remove machineWriting effect)
+
+12.05.25:
+
+-- CtA styled questions in FAQ
+-- added machineWriting effect to FAQ answers
+-- removed eventListener on question after one click
 
 10.05.25:
 

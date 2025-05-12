@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const section_2 = document.querySelector("#section_2");
   const section_3 = document.querySelector("#section_3");
 
-  const par_about = document.querySelector(".machine_par");
+  //const par_about = document.querySelector(".machine_par");
 
   const map = document.querySelector("#map");
   const img = document.querySelector("#img");
@@ -27,10 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let previousSection = "";
 
   // -- Texts
-
-  let about_text = `
-Lekarz weterynarii, specjalista w dziedzinie chorób psów i kotów oraz specjalista chirurg. Absolwent Wydziału Medycyny Weterynaryjnej Uniwersytetu Przyrodniczego w Lublinie.
-Specjalizuje się w kompleksowej diagnostyce, leczeniu oraz chirurgii psów i kotów. Dążąc do zapewnienia opieki na najwyższym poziomie, stale poszerza wiedzę zgodnie z aktualnymi standardami medycyny weterynaryjnej.`;
 
   // -- Mobile menu creation --
   const mob_menu = document.createElement("button");
@@ -86,23 +82,6 @@ Specjalizuje się w kompleksowej diagnostyce, leczeniu oraz chirurgii psów i ko
       }, delay);
     };
   }
-
-  // -- Machine Writing effect
-
-  // let text_present = false;
-
-  // function machineWriting(paragraph, text) {
-  //   if (!text_present) {
-  //     text_present = true;
-  //     let delay = 0;
-  //     for (let i = 0; i < text.length; i++) {
-  //       setTimeout(() => {
-  //         paragraph.textContent += text[i];
-  //       }, delay);
-  //       delay += 10;
-  //     }
-  //   }
-  // }
 
   // -- Scroll events --
 
@@ -257,22 +236,23 @@ Specjalizuje się w kompleksowej diagnostyce, leczeniu oraz chirurgii psów i ko
 
   const qaElements = document.querySelectorAll(".qa");
 
-  function machineWriting(paragraph, text) {
+  function machineWriting(paragraph, text, question, eventHandler) {
     let delay = 0;
+    paragraph.style.margin = "10px 20px 10px 20px";
     for (let i = 0; i < text.length; i++) {
       setTimeout(() => {
         paragraph.textContent += text[i];
       }, delay);
       delay += 10;
     }
-    question.removeEventListener("click", event_a);
+    question.removeEventListener("click", eventHandler);
   }
 
   qaElements.forEach((element) => {
     let question = element.querySelector("h3");
     let answer_text = element.querySelector(".answer_text").innerText;
     let answer_box = element.querySelector(".answer_box");
-    const event_a = () => {machineWriting(answer_box, answer_text);};
+    const event_a = () => {machineWriting(answer_box, answer_text, question, event_a);};
     question.addEventListener("click", event_a);
   });
 });

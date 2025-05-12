@@ -41,7 +41,7 @@ body > * {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    background-color: (223, 252, 229);
+    background-color: rgb(223, 252, 229);
     margin: 0;
     z-index: 9;
 }
@@ -459,4 +459,31 @@ body > * {
     100% {
         transform: translateX(0px);
     }
+}
+
+/* FAQ Section */
+.separator {
+    height: 20vh;;
+}
+
+.qa > h3 {
+    border: 1px solid black;
+    padding: 10px 20px 10px 20px;
+    margin: 5px;
+    font-weight: 400;
+    background-color: rgb(125, 125, 125);
+    color: #f0fcf8;
+    transition: all 0.2s ease;
+}
+.qa > h3:hover {
+    background-color: #f0fcf8;
+    color: rgb(125, 125, 125);
+    cursor: pointer;
+}
+.answer_text {
+    display: none;
+}
+.answer_box {
+    padding: 0px 20px 0px 20px;
+    margin: 5px;
 }

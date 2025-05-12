@@ -253,6 +253,8 @@ Specjalizuje się w kompleksowej diagnostyce, leczeniu oraz chirurgii psów i ko
   // Listen for window resize
   window.addEventListener("resize", handleResponsiveMenu);
 
+  // Machine writing in FAQ section
+
   const qaElements = document.querySelectorAll(".qa");
 
   function machineWriting(paragraph, text) {

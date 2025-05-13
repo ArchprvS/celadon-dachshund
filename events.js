@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   mob_menu.style.cssText = `
         width: 29%;
         height: 40px;
-        text-align: right;
+        text-align: left;
         padding-right: 30px;
         font-family: "Montserrat", sans-serif;
         font-size: 15px;
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         height: 40px;
         display: flex;
         align-items: center;
-        padding-left: 20px;
+        padding-left: 40px;
         font-family: "Montserrat", sans-serif;
         font-size: 15px;
         letter-spacing: 2px;
@@ -254,5 +254,23 @@ document.addEventListener("DOMContentLoaded", () => {
     let answer_box = element.querySelector(".answer_box");
     const event_a = () => {machineWriting(answer_box, answer_text, question, event_a);};
     question.addEventListener("click", event_a);
+  });
+
+  //-- contact icon animation --//
+
+  const contact_selectors = document.querySelectorAll('#phone, #email, #hours, #location');
+
+  contact_selectors.forEach(selector => {
+    const icon = selector.querySelector('img'); // Changed from cont_icon to icon for clarity
+
+    if (icon) {
+        selector.addEventListener('mouseover', () => {
+            icon.classList.add('contact-animate');
+        });
+
+        selector.addEventListener('mouseout', () => {
+            icon.classList.remove('contact-animate');
+        });
+    }
   });
 });

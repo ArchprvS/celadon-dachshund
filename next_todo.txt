@@ -1,10 +1,18 @@
 In next commit:
 
 ()-- FAQ:
+- research on hover animations in JS
 - ask about questions to place
 - style the questions (they should look like CtA)
 
+()-- Restyle dropdown menu to right sliding oout menu
 ()-- Work on ABOUT section (add only photo and remove machineWriting effect)
+
+13.05.25:
+
+-- Styled the contact section
+-- Added icons animation in contact sections
+-- Restyled text align in dropdown menu
 
 12.05.25:
 

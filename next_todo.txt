@@ -8,6 +8,10 @@ In next commit:
 ()-- Restyle dropdown menu to right sliding oout menu
 ()-- Work on ABOUT section (add only photo and remove machineWriting effect)
 
+15.05.25:
+
+-- Optimized fonts; added border-bottom to h2_header
+
 13.05.25:
 
 -- Styled the contact section

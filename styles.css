@@ -193,7 +193,7 @@ body > * {
 
     .img-text h1 {
         text-align: justify;
-        font-size: 2em;
+        font-size: 2.4em;
         margin-bottom: 0.3em;
         font-family: "Montserrat", sans-serif;
         transition: opacity 0.3s ease, transform 0.3s ease;
@@ -201,8 +201,8 @@ body > * {
     }
 
     .img-text p {
-        text-align: justify;
-        font-size: 0.8em;
+        text-align: left;
+        font-size: 0.95em;
         margin: 0;
         font-family: "Montserrat", sans-serif;
         transition: opacity 0.3s ease, transform 0.3s ease;
@@ -289,6 +289,13 @@ body > * {
     text-align: center;
     font-weight: 300;
     letter-spacing: 5px;
+    padding-bottom: 10px;
+    width: 100%; /* Taka sama szerokość jak sekcje */
+    margin: 0 auto; /* Wycentrowanie */
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid black;
+    /* Usuwamy niepoprawną właściwość border-bottom-width: 90% */
 }
 #title_name {
     font-weight: 500;
@@ -331,17 +338,18 @@ body > * {
     align-items: center;
     flex-direction: row;
     margin: 10px;
+    cursor: pointer;
 }
 #phone > h3, #email > h3 {
     font-size: 22px;
-    font-weight: 250;
+    font-weight: 270;
     letter-spacing: 2px;
     margin-left: 10px;
     text-align: left;
 }
 #hours > h3, #location > h3 {
     font-size: 22px;
-    font-weight: 250;
+    font-weight: 270;
     letter-spacing: 2px;
     margin-right: 10px;
     text-align: right;

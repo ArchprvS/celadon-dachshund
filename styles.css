@@ -187,6 +187,7 @@ body > * {
         width: 100%;
         padding: 5px 0 20px;
         padding-left: 28px;
+        padding-bottom: 7px;
         background: rgba(0, 0, 0, 0.4);
         transition: background 0.3s ease;
     }
@@ -195,6 +196,7 @@ body > * {
         text-align: justify;
         font-size: 2.4em;
         margin-bottom: 0.3em;
+        margin-top: 0px;
         font-family: "Montserrat", sans-serif;
         transition: opacity 0.3s ease, transform 0.3s ease;
         /* usuń opacity: 1; */
@@ -341,21 +343,27 @@ body > * {
     cursor: pointer;
 }
 #phone > h3, #email > h3 {
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 270;
     letter-spacing: 2px;
     margin-left: 10px;
     text-align: left;
 }
 #hours > h3, #location > h3 {
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 270;
     letter-spacing: 2px;
     margin-right: 10px;
     text-align: right;
 }
 #phone > img, #email > img, #hours > img, #location img {
+    width: 30px;
+    height: 30px;
     transition: transform 0.5s ease;
+}
+#location img {
+    width: 32px;
+    height: 32px;
 }
 
 @media (max-width: 600px) {
